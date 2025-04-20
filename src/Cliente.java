@@ -8,6 +8,9 @@ public class Cliente {
         Socket socket = new Socket("localhost", 4000);
         Scanner scanner = new Scanner(System.in);
 
+        ClienteThread clienteThread = new ClienteThread(socket);
+        clienteThread.start();
+
         PrintStream printStream = new PrintStream(socket.getOutputStream());
         String entradaDoTeclado = scanner.nextLine();
         printStream.println(entradaDoTeclado);

@@ -5,8 +5,10 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -21,8 +23,10 @@ public class Main {
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         String leituraDoBuffer;
 
+//        estrutura para responder mensagens
+        PrintStream printStream = new PrintStream(socket.getOutputStream());
         while((leituraDoBuffer = bufferedReader.readLine()) != null){
-            System.out.println("Servidor:\t" + leituraDoBuffer);
+            printStream.println("Servidor:\t" + leituraDoBuffer);
         }
 
     }
