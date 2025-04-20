@@ -1,4 +1,4 @@
-package Legacy;//Trabalho 1 de Desenvolvimento Mobile - TADS 2025/1
+package LegacyNaoUsar;//Trabalho 1 de Desenvolvimento Mobile - TADS 2025/1
 //César; Débora; Lucas; Tamy
 //ChatApp
 

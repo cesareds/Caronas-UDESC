@@ -1,14 +1,19 @@
 package Servidor;
 
+import Cliente.Cliente;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Servidor extends Thread{
-    public Servidor() {
+    ArrayList<Cliente> clientes = new ArrayList<>();
+    public Servidor(ArrayList<Cliente> clientes) {
+        this.clientes = clientes;
     }
     public static void executarServidor() throws IOException {
         System.out.println("Bem vindo ao ChatApp da Equipe Computação Invaders");

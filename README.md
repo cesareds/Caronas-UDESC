@@ -23,7 +23,7 @@ Este projeto consiste em um **servidor** que gerencia conexões de múltiplos **
   - Roteia mensagens e arquivos.  
   - Armazena logs em `server_log.txt`.  
 
-- **Cliente**:  
+- **LegacyNaoUsar.Cliente**:  
   - Conecta-se ao servidor.  
   - Envia/recebe mensagens e arquivos.  
   - Exibe mensagens recebidas no console.  

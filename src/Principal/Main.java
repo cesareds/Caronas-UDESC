@@ -12,9 +12,10 @@ public class Main {
 
         criarClientes();
         mostrarClientes();
+        servidor = new Servidor(clientes);
         servidor.start();
     }
-    public static Servidor servidor = new Servidor();
+    public static Servidor servidor;
     public static Scanner scannerInt = new Scanner(System.in);
     public static Scanner scannerString = new Scanner(System.in);
     public static ArrayList<Cliente> clientes = new ArrayList<>();

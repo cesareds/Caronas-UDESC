@@ -10,6 +10,12 @@ public class Cliente {
     public Cliente(String nome) {
         this.nome = nome;
     }
+
+    public static void main(String[] args) throws IOException {
+        System.out.println("INSIRA SEU NOME:\t");
+        System.out.println("NOME DO REMETENTE");
+        executarCliente(args);
+    }
     public static void executarCliente(String[] args) throws IOException {
         Socket socket = new Socket("localhost", 4000);
         Scanner scanner = new Scanner(System.in);
