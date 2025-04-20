@@ -12,8 +12,10 @@ public class Cliente {
         clienteThread.start();
 
         PrintStream printStream = new PrintStream(socket.getOutputStream());
-        String entradaDoTeclado = scanner.nextLine();
-        printStream.println(entradaDoTeclado);
+        String entradaDoTeclado;
+        while((entradaDoTeclado = scanner.nextLine())!= null){
+            printStream.println(entradaDoTeclado);
+        }
     }
 
 

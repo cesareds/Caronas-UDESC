@@ -27,7 +27,9 @@ public class Main {
         PrintStream printStream = new PrintStream(socket.getOutputStream());
         while((leituraDoBuffer = bufferedReader.readLine()) != null){
             printStream.println("Servidor:\t" + leituraDoBuffer);
+            System.out.println("RESPONDIDO:\t" + leituraDoBuffer);
         }
+        System.out.println("aAaAAAAAAAA");
 
     }
 }
