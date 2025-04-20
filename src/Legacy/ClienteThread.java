@@ -1,7 +1,8 @@
+package Legacy;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.net.Socket;
 
 public class ClienteThread extends Thread{
@@ -20,7 +21,7 @@ public class ClienteThread extends Thread{
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             String leituraDoBuffer;
             while((leituraDoBuffer = bufferedReader.readLine()) != null){
-                System.out.println("Thread Cliente recebendo do servidor:\t" + leituraDoBuffer);
+                System.out.println("Thread Legacy.Cliente recebendo do servidor:\t" + leituraDoBuffer);
             }
 
         } catch (IOException e) {
