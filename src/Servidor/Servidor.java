@@ -14,13 +14,15 @@ public class Servidor {
 
     public static void main(String[] args) {
         try {
-            logWriter = new FileWriter("server_log.txt", true);
+            // QUANDO FOR ENTRAR, MUDE O NOME DA PATH !!!!!!!!
+            logWriter = new FileWriter("/home/udesc/IdeaProjects/Caronas-UDESC/src/server_log.txt", true);
+
             ServerSocket serverSocket = new ServerSocket(PORTA);
             System.out.println("Servidor iniciado na porta " + PORTA);
 
             while (true) {
                 Socket socket = serverSocket.accept();
-                new ClientHandler(socket).start();
+                new ClientHandler(socket, logWriter).start();
             }
         } catch (IOException e) {
             System.err.println("Erro no servidor: " + e.getMessage());
@@ -31,10 +33,14 @@ public class Servidor {
         private Socket socket;
         private PrintWriter out;
         private BufferedReader in;
-        private String nome;
+        private String nome = "sopanascandjanga";
 
-        public ClientHandler(Socket socket) {
+        private FileWriter logWriter;
+
+        public ClientHandler(Socket socket, FileWriter logWriter) {
+
             this.socket = socket;
+            this.logWriter = logWriter;
         }
 
         public void run() {
@@ -45,13 +51,14 @@ public class Servidor {
                 // Registrar conexão no log
                 String endereco = socket.getInetAddress().getHostAddress();
                 String dataHora = sdf.format(new Date());
-                logWriter.write("Conexão de " + endereco + " em " + dataHora + " - Nome: " + nome + "\n");
-                logWriter.flush();
 
                 out.println("Digite seu nome:");
                 nome = in.readLine();
                 clientes.put(nome, out);
                 broadcast("Servidor", nome + " entrou no chat");
+
+                logWriter.write("Conexão de " + endereco + " em " + dataHora + " - Nome: " + nome + "\n");
+                logWriter.flush();
 
                 String mensagem;
                 while ((mensagem = in.readLine()) != null) {
@@ -116,8 +123,10 @@ public class Servidor {
                     int bytesRead;
                     while ((bytesRead = is.read(buffer)) != -1) {
                         os.write(buffer, 0, bytesRead);
+                        System.out.println("enviando " + bytesRead + "bytes para o destinatario\nBUFFER: " + buffer);
                         // Verifica por comando especial de cancelamento
                         if (new String(buffer, 0, bytesRead).contains("/cancel")) {
+                            System.out.println("CANCELOU????????????????");
                             break;
                         }
                     }
