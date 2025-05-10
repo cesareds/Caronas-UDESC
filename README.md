@@ -7,6 +7,18 @@ Bem-vindo ao **ChatApp**, um sistema de comunicação em tempo real desenvolvido
 
 Este projeto consiste em um **servidor** que gerencia conexões de múltiplos **clientes**, permitindo o envio de mensagens de texto e arquivos entre usuários conectados.  
 
+## 👨‍🏫 Instruções de execução
+1. **Intellij com Java 22**
+
+2. **Executar Servidor**
+
+3. **Executar Cliente**
+
+4. **Executar Main selecionando a funcionalidade Cliente também**
+
+5. **Utilizar as seguintes funcionalidades**
+
+
 ## 📌 Funcionalidades  
 
 ✔ **Comunicação cliente-servidor-cliente**  
@@ -16,43 +28,7 @@ Este projeto consiste em um **servidor** que gerencia conexões de múltiplos **
 ✔ **Log de conexões** no servidor (IP, data e hora)  
 ✔ **Encerramento de sessão** com `/sair`  
 
-## ⚙️ Arquitetura  
 
-- **Servidor**:  
-  - Gerencia conexões de clientes.  
-  - Roteia mensagens e arquivos.  
-  - Armazena logs em `server_log.txt`.  
-
-- **LegacyNaoUsar.Cliente**:  
-  - Conecta-se ao servidor.  
-  - Envia/recebe mensagens e arquivos.  
-  - Exibe mensagens recebidas no console.  
-
-## 🚀 Como Executar  
-
-### Pré-requisitos  
-- Java 17+  
-- IDE ou terminal  
-
-### Passos:  
-
-1. **Inicie o Servidor**:  
-   ```bash  
-   java Server <porta>  
-   ```  
-   Exemplo:  
-   ```bash  
-   java Server 12345  
-   ```  
-
-2. **Conecte Clientes**:  
-   ```bash  
-   java Client <ip_servidor> <porta> <nome_usuario>  
-   ```  
-   Exemplo:  
-   ```bash  
-   java Client localhost 12345 Alice  
-   ```  
 
 ## 📋 Comandos Disponíveis  
 
@@ -63,23 +39,7 @@ Este projeto consiste em um **servidor** que gerencia conexões de múltiplos **
 | `/send file <destino> <caminho>` | Envia um arquivo |  
 | `/sair` | Desconecta do servidor |  
 
-## 📂 Estrutura do Projeto  
 
-```  
-ChatApp/  
-├── src/  
-│   ├── Server.java         # Lógica do servidor  
-│   ├── Client.java         # Lógica do cliente  
-│   └── ...                 # Classes auxiliares  
-├── server_log.txt          # Log de conexões  
-└── README.md               # Este arquivo  
-```  
-
-## 📄 Licença  
-
-Este projeto está sob a licença **GNU General Public License v3.0**. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.  
-
----  
 
 Desenvolvido por:  
 🔹 [César Eduardo de Souza](https://github.com/cesareds)  
@@ -87,5 +47,4 @@ Desenvolvido por:
 🔹 [Lucas Thomas](https://github.com/user3)  
 🔹 [Tamy Gabrielle](https://github.com/TamyGabrielle)  
 
-📅 **Prazo de entrega**: 09/05/2024  
 🎓 **UDESC - Programação para Dispositivos Móveis**
